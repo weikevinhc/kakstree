@@ -1,12 +1,17 @@
 This is the R function to plot Hyphy ABSREL results into a phylogenetic tree with branch-specific omega (Ka/Ks) values.
 
-The function should be loaded into R with the following libraries pre-loaded:
+The function should be loaded into R with the following libraries pre-loaded
 
 library(rjson)
+
 library(ape)
+
 library(phytools)
+
 library(phangorn)
+
 library(RColorBrewer)
+
 
 Test data is provided for the gene c(3)G across the Drosophila phylogeny.
 
