@@ -1,3 +1,11 @@
+## library needed rjson, phangorn, ape, phytools, RColorBrewer
+library(rjson)
+library(ape)
+library(phytools)
+library(phangorn)
+library(RColorBrewer)
+## function to plot hyphy kaks results on tree and return modified tree object with p-values and omega values
+
 hyphy.tree <- function(treefile, jsonfile, outg) {
   tree<- read.tree(treefile)
   tree$tip.label <- gsub(pattern = "-", replacement = "_", tree$tip.label)
