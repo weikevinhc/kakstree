@@ -1,18 +1,12 @@
-## library needed rjson, phangorn, ape, phytools, RColorBrewer
-library(rjson)
-library(ape)
-library(phytools)
-library(phangorn)
-library(RColorBrewer)
-## function to plot hyphy kaks results on tree and return modified tree object with p-values and omega values
 hyphy.tree <- function(treefile, jsonfile, outg) {
   tree<- read.tree(treefile)
+  tree$tip.label <- gsub(pattern = "-", replacement = "_", tree$tip.label)
   json <- fromJSON(file = jsonfile)
-  #  tree <- drop.tip(tree, grep(outg, tree$tip.label))
+#  tree <- drop.tip(tree, grep(outg, tree$tip.label))
   #plotBranchbyTrait(tree,tree$edge.length,"edges", palette =  colorRampPalette(brewer.pal("RdYlGn", n = 4)),show.tip.label=TRUE)
   treetxt <- paste(json$input$trees$`0`, ";", sep = "")
   tree2 <- read.tree(text = treetxt)
-  #  tree2 <- drop.tip(tree2, grep(outg, tree2$tip.label))
+#  tree2 <- drop.tip(tree2, grep(outg, tree2$tip.label))
   tree2$node.label[1] <- "base"
   #plotBranchbyTrait(tree2,tree2$edge.length,"edges", palette =  colorRampPalette(brewer.pal("RdYlGn", n = 4)),show.tip.label=TRUE)
   #nodelabels(tree2$node.label)
