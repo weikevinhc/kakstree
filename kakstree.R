@@ -4,9 +4,8 @@ library(ape)
 library(phytools)
 library(phangorn)
 library(RColorBrewer)
-
 ## function to plot hyphy kaks results on tree and return modified tree object with p-values and omega values
-hyphy.tree <- function(treefile, jsonfile, outg) {
+hyphy.tree <- function(treefile, jsonfile, outg, p = 0.01, superp = p*0.1) {
   tree<- read.tree(treefile)
   tree$tip.label <- gsub(pattern = "-", replacement = "_", tree$tip.label)
   json <- fromJSON(file = jsonfile)
@@ -73,10 +72,10 @@ hyphy.tree <- function(treefile, jsonfile, outg) {
                     show.tip.label=TRUE, xlims = c(-1,1))
   add.scale.bar(lwd = 2)
   treepv$edge.length[is.na(treepv$edge.length)] <- 1
-  if (sum(treepv$edge.length < 0.05)) {
-    stars <- ifelse(treepv$edge.length[which(treepv$edge.length < 0.05)] < 0.005, "**", "*")
+  if (sum(treepv$edge.length < p)) {
+    stars <- ifelse(treepv$edge.length[which(treepv$edge.length < p)] < superp, "**", "*")
     
-    edgelabels(text = stars, which(treepv$edge.length < 0.05), frame = "none", adj = c(0.5,0.75), cex = 2)
+    edgelabels(text = stars, which(treepv$edge.length < p), frame = "none", adj = c(0.5,0.75), cex = 2)
   }
   
   
