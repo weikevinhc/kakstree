@@ -1,7 +1,9 @@
 This is the R function to plot Hyphy ABSREL results into a phylogenetic tree with branch-specific omega (Ka/Ks) values. Omega value is plotted in log(10) scale. Branches with significant p-values will have 1 or 2 stars. Note, the significance here is based on hyphy's inference on whether certain parts of the gene experienced episodic positive selection at a given branch, and NOT the significance for levels of selection gene-wide.
 
 When running Hyphy ABSREL, the input tree must have node labels. To add node label to your tree (in newick format), use the nametreenodes.R script:
+
 Rscript nametreenodes.R tree
+
 This will generate the tree.noded file which should be used as input for Hyphy ABSREL as well as the treefile for the hyphy.tree function below.
 
 
