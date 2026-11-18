@@ -25,10 +25,15 @@ library(RColorBrewer)
 Usage:
 
 hyphy.tree(treefile, jsonfile, outg, p, superp)
+
 treefile: treefile used as input for Hyphy ABSREL. 
+
 jsonfile: json output of Hyphy ABSREL
+
 outg: name of outgroup if you want to change the tree to.
+
 p: p-value cutoff for showing significant branches. Default is 0.01.
+
 superp: p-value cutoff for showing double stars for extremely low p-value. Default is 0.1*p.
 
 
