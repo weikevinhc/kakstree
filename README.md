@@ -7,7 +7,8 @@ Rscript nametreenodes.R tree
 This will generate the tree.noded file which should be used as input for Hyphy ABSREL as well as the treefile for the hyphy.tree function below.
 
 
-The function should be loaded into R console with the following libraries pre-loaded
+
+kakstree.R contains the R function that can be loaded into R console with the following libraries pre-loaded
 
 library(rjson)  
 library(ape)  
