@@ -26,6 +26,8 @@ Usage:
 
 hyphy.tree(treefile, jsonfile, outg, p, superp)
 
+Input and options:
+
 treefile: treefile used as input for Hyphy ABSREL. 
 
 jsonfile: json output of Hyphy ABSREL
