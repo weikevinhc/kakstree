@@ -28,7 +28,7 @@ hyphy.tree(treefile, jsonfile, outg, p, superp)
 
 Input and options:
 
-treefile: treefile used as input for Hyphy ABSREL.  
+treefile: treefile used as input for Hyphy ABSREL. The treefile should have node labels.  
 jsonfile: json output of Hyphy ABSREL.  
 outg: name of outgroup if you want to change the tree to.  
 p: p-value cutoff for showing significant branches. Default is 0.01.  
